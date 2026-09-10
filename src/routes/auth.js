@@ -13,6 +13,7 @@ router.post('/register', async (req, res) => {
     await pool.query(query);
     res.redirect('/login');
   } catch (err) {
+    console.log(err)
     res.render('register', { error: 'Utilizador já existe ou dados inválidos.', username: null });
   }
 });
