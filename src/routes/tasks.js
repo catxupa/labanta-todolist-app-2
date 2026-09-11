@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../db');
 const requireAuth = require('../middleware/requireAuth');
 const router = express.Router();
+// todo: campo priority
 
 // VULNERÁVEL: lista TODAS as tarefas de TODOS os utilizadores (Broken Access Control)
 router.get('/tasks', requireAuth, async (req, res) => {
