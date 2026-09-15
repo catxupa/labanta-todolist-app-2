@@ -29,6 +29,7 @@ Cria a base de dados e corre o `schema.sql`:
 
 ```bash
 docker exec -i postgres15 psql -U postgres -d todolist < schema.sql
+
 ```
 
 ## Arrancar em desenvolvimento
