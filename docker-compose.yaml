@@ -1,14 +1,14 @@
 services:
-  todolist-app:
-    container_name: todolist-app
+ # todolist-app:
+  #  container_name: todolist-app
     #build .
     
-    image: todolist-app:0.0.0
-    ports:
-        - 3000:3000
-    env_file: .env
-    networks:
-        - todolist-network
+   # image: todolist-app:0.0.0
+   # ports:
+       # - 3000:3000
+   # env_file: .env
+   # networks:
+     #   - todolist-network
   
 
   postgres15:
@@ -36,6 +36,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: postgres
     ports:
       - 5050:80
+    networks:
+      - todolist-network
     restart: unless-stopped
     volumes:
       - pgadmin-2025:/var/lib/pgadmin
@@ -48,7 +50,8 @@ volumes:
   pgadmin-2025:
     name: pgadmin-2025
 
-networks:
+
+networks: 
   todolist-network:
     name: todolist-network
     external: true
