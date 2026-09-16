@@ -11,6 +11,7 @@ router.post('/register', async (req, res) => {
     // VULNERÁVEL: password guardada em texto simples + query por concatenação (SQL Injection)
     const query = `INSERT INTO users (username, password_hash) VALUES ('${username}', '${password}')`;
     await pool.query(query);
+    console.log 
     res.redirect('/login');
   } catch (err) {
     console.log(err)
