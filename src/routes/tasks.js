@@ -22,7 +22,7 @@ router.post('/tasks', requireAuth, async (req, res) => {
   // em nome de outro utilizador. Query também continua por concatenação (SQL Injection).
   const userId = req.query.userId;
   const query = `INSERT INTO tasks (owner_id, title, description) VALUES ($1, $2, $3)`;
-  await pool.query(query[userId, title, description]);
+  await pool.query(query, [userId, title, description]);
   res.redirect('/tasks');
 });
 
