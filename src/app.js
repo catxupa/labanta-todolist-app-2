@@ -12,7 +12,7 @@ const apiRoutes = require('./routes/api');
 //const app = express();
 //let express = require('express');
 
-let app2 = string("express");
+//let app2 = string("express");
 
 let app = express();
 app.disable("x-powered-by");  
